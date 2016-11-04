@@ -3,7 +3,8 @@ var App = angular.module('RSSFeedApp', [
     'ui.router.util',
     'ui.router.compat',
     'app.config',
-    'xml'
+    'xml',
+    'ngResource'
 ])
 
 .config(['$httpProvider', function($httpProvider) {

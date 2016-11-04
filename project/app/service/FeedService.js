@@ -9,5 +9,5 @@ App.factory('FeedService', function () {
 
             return _url;
         }
-    }
+    };
 });

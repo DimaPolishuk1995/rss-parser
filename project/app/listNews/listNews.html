@@ -18,11 +18,11 @@
         <div class="container">
             <ul class="unstyled">
                 <span class="badge badge-warning" ng-show="feeds.length > 0">{{(feeds | filter:buscarTexto).length}} новых новостей</span>
-                <li class="item" ng-repeat="feed in feeds | filter:buscarTexto">
+                <li class="item" ng-repeat="feed in feeds  | filter:buscarTexto">
                     <img src="{{feed.image.__cdata | imgSplit}}">
                     <h5><a ui-sref="view-property({id:{{$index}}})">{{feed.title.__cdata}}</a></h5>
                     <p class="text-left">{{feed.description.__cdata | descriptionSplit | limitTo:50}} ...</p>
-                    <span class="small">{{feed.pubDate.__cdata | time }}</span>
+                    <span class="small">{{feed.pubDate.__cdata | date:'yyyy-MM-dd HH:mm'}}</span>
                     <button ui-sref="view-news({id:{{$index}}})">Читать даллее</button>
                 </li>
             </ul>
