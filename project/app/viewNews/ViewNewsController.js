@@ -1,6 +1,7 @@
-App.controller("ViewCtrl", ['$scope', '$state', '$stateParams', '$http', '$timeout', '$rootScope','FeedService', function ($scope, $state, $stateParams, $http, $timeout, $rootScope, FeedService) {
+App.controller("ViewNewsCtrl", ['$scope', '$state', '$stateParams', '$http', '$timeout', '$rootScope', 'FeedService',
+    function ($scope, $state, $stateParams, $http, $timeout, $rootScope, FeedService) {
     $scope.loader = true;
-    $scope.feedSrc = FeedService.getName();
+    $scope.feedSrc = FeedService.getUrl();
     $timeout(function () {
         $http.get($scope.feedSrc).success(function (data) {
             var id = $stateParams.id;
@@ -9,5 +10,4 @@ App.controller("ViewCtrl", ['$scope', '$state', '$stateParams', '$http', '$timeo
         });
         $scope.loader = false;
     }, 1500);
-
 }]);

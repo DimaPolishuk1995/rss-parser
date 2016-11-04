@@ -21,7 +21,7 @@ module.exports = function (grunt) {
                     middleware: function(connect, options) {
                       return [
                           modRewrite(['^[^\\.]*$ /index.html [L]']),
-                          connect.static('app'),
+                          connect.static('app')
                       ];
                     }
                 }

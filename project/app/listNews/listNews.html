@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <div data-ng-controller="HomepageCtrl">
+    <div data-ng-controller="ListNewsCtrl">
         <div class="containerTitle">
             <h4>Новости</h4>
         </div>
@@ -22,8 +22,8 @@
                     <img src="{{feed.image.__cdata | imgSplit}}">
                     <h5><a ui-sref="view-property({id:{{$index}}})">{{feed.title.__cdata}}</a></h5>
                     <p class="text-left">{{feed.description.__cdata | descriptionSplit | limitTo:50}} ...</p>
-                    <span class="small">{{feed.pubDate.__cdata | dateParse }}</span>
-                    <button ui-sref="view-property({id:{{$index}}})">Читать даллее</button>
+                    <span class="small">{{feed.pubDate.__cdata | time }}</span>
+                    <button ui-sref="view-news({id:{{$index}}})">Читать даллее</button>
                 </li>
             </ul>
         </div>

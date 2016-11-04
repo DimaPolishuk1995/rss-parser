@@ -1,4 +1,4 @@
-App.filter('dateParse', function () {
+App.filter('time', function () {
     return function (publishedDate) {
         var timestamp = Date.parse(publishedDate);
         var dateFormatted = new Date(timestamp);

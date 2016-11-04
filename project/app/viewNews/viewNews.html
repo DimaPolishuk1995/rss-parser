@@ -1,6 +1,6 @@
 <div class="container">
     <div class="container">
-        <a class="link" ui-sref="homepage">Новости</a>
+        <a class="link" ui-sref="listNews">Новости</a>
     </div>
     <ng-include src="'pages/loader.html'"></ng-include>
     <ul class="unstyled" ng-if="!loader">
@@ -39,7 +39,7 @@
                 <img class="shareButton" src="https://simplesharebuttons.com/images/somacro/vk.png" alt="VK"/>
             </a>
 
-            <span class="small" style="display: block;padding:20px 0;clear: both">{{feeds.pubDate.__cdata | dateParse }}</span>
+            <span class="small" style="display: block;padding:20px 0;clear: both">{{feeds.pubDate.__cdata | time }}</span>
         </li>
     </ul>
 </div>

@@ -1,11 +1,11 @@
 App.factory('FeedService', function () {
-    var _name = '';
+    var _url = 'http://k.img.com.ua/rss/ru/news.xml';
 return {
-    setName: function (name) {
-        _name = name;
+    setUrl: function (url) {
+        _url = url;
     },
-    getName: function () {
-        return _name;
+    getUrl: function () {
+        return _url;
     }
 }
 });
