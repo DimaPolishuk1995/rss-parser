@@ -18,17 +18,16 @@ module.exports = function (grunt) {
             },
             livereload: {
                 options: {
-                    middleware: function(connect, options) {
-                      return [
-                          modRewrite(['^[^\\.]*$ /index.html [L]']),
-                          connect.static('app')
-                      ];
+                    middleware: function (connect, options) {
+                        return [
+                            modRewrite(['^[^\\.]*$ /index.html [L]']),
+                            connect.static('app')
+                        ];
                     }
                 }
             }
         }
     });
-
 
     grunt.registerTask('dev', 'Compile then start a connect web server', function (target) {
         if (target === 'serve') {

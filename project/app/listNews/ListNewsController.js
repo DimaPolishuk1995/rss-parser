@@ -1,4 +1,5 @@
-App.controller("ListNewsCtrl", ['$scope', '$http', '$rootScope','FeedService','ArrayService', function ($scope, $http, $rootScope,FeedService,ArrayService) {
+App.controller('ListNewsCtrl', ['$scope', '$http', '$rootScope', 'FeedService', 'ArrayService', function ($scope, $http, $rootScope, FeedService, ArrayService) {
+
     $scope.feedSrc = FeedService.getUrl();
     $scope.news = ArrayService.getArrayNews();
     $http.get($scope.feedSrc).success(function (data) {
@@ -11,5 +12,4 @@ App.controller("ListNewsCtrl", ['$scope', '$http', '$rootScope','FeedService','A
             $scope.feeds = data.rss.channel.item;
         });
     };
-
 }]);
