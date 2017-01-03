@@ -4,8 +4,6 @@ rssFeedApp
     .config(['$locationProvider', '$stateProvider', '$urlRouterProvider',
         function ($locationProvider, $stateProvider, $urlRouterProvider) {
 
-            $locationProvider.html5Mode(true);
-            $locationProvider.hashPrefix('!');
             $urlRouterProvider.otherwise('/');
 
             $stateProvider
@@ -18,6 +16,5 @@ rssFeedApp
                     url: '/:id',
                     controller: 'ViewNewsCtrl',
                     templateUrl: 'views/viewNews.html'
-
-                })
+                });
         }]);
