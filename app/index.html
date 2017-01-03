@@ -1,28 +1,36 @@
 <!doctype html>
-<html lang="en">
+<html>
     <head>
         <base href="/">
         <meta charset="UTF-8">
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
-        <!-- build:css css/styles.min.css -->
-        <link rel="stylesheet" href="css/styles.css">
+        <title>Rss news parser</title>
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css(.) styles/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
     </head>
     <body ng-app="rssFeedApp">
         <div data-ui-view></div>
-        <!-- build:js js/assets.min.js -->
+
+        <!-- build:js(.) scripts/vendor.js -->
+        <!-- bower:js -->
         <script src="bower_components/angular/angular.min.js"></script>
         <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
         <script src="bower_components/x2js/xml2json.min.js"></script>
         <script src="bower_components/angular-xml/angular-xml.min.js"></script>
         <script src="bower_components/angular-resource/angular-resource.js"></script>
         <script src="bower_components/angular-route/angular-route.js"></script>
+        <!-- endbower -->
         <!-- endbuild -->
 
-        <!-- build:js js/app.min.js -->
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/routes.js"></script>
         <script src="scripts/controllers/ListNewsController.js"></script>
@@ -36,3 +44,4 @@
         <!-- endbuild -->
     </body>
 </html>
+

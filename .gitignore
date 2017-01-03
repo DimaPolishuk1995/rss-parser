@@ -1,5 +1,5 @@
-project/node_modules
-project/dist
-project/.tmp
+node_modules
+dist
+.tmp
 .idea/
-project/bower_components
+bower_components

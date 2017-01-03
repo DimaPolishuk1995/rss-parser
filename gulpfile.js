@@ -22,10 +22,7 @@ var paths = {
     test: ['test/spec/**/*.js'],
     testRequire: [
         yeoman.app + '/bower_components/angular/angular.js',
-        yeoman.app + '/bower_components/angular-mocks/angular-mocks.js',
         yeoman.app + '/bower_components/angular-resource/angular-resource.js',
-        yeoman.app + '/bower_components/angular-cookies/angular-cookies.js',
-        yeoman.app + '/bower_components/angular-sanitize/angular-sanitize.js',
         yeoman.app + '/bower_components/angular-route/angular-route.js',
         'test/mock/**/*.js',
         'test/spec/**/*.js'
@@ -56,6 +53,11 @@ var styles = lazypipe()
 ///////////
 // Tasks //
 ///////////
+
+gulp.task('copy', function () {
+    gulp.src('./app/pages/loader.html')
+        .pipe(gulp.dest('./dist/pages/'));
+});
 
 gulp.task('styles', function () {
     return gulp.src(paths.styles)
@@ -205,7 +207,7 @@ gulp.task('copy:fonts', function () {
         .pipe(gulp.dest(yeoman.dist + '/fonts'));
 });
 
-gulp.task('build', ['clean:dist'], function () {
+gulp.task('build', ['clean:dist', 'copy'], function () {
     runSequence(['images', 'copy:extras', 'copy:fonts', 'client:build']);
 });
 
