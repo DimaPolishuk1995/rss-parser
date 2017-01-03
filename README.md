@@ -3,7 +3,7 @@
 Requirement
 
   - node.js
-  - grunt
+  - gulp
   - bower
 
 ### Installation
@@ -16,7 +16,8 @@ $ git clone https://github.com/DimaPolishuk1995/rssParser.git
 
 ```sh
 $ cd project
-$ start dev.sh or ./dev.sh
+$ npm i and bower i
+$ gulp serve or gulp build
 ```
 
 ### Plugins

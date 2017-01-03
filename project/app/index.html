@@ -1,37 +1,38 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <base href="/">
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <!-- build:css css/styles.min.css -->
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- endbuild -->
-</head>
-<body ng-app="RSSFeedApp">
-<div ui-view></div>
-<!-- build:js js/assets.min.js -->
-<script src="bower_components/angular/angular.min.js"></script>
-<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-<script src="bower_components/x2js/xml2json.min.js"></script>
-<script src="bower_components/angular-xml/angular-xml.min.js"></script>
-<!-- endbuild -->
+    <head>
+        <base href="/">
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <!-- build:css css/styles.min.css -->
+        <link rel="stylesheet" href="css/styles.css">
+        <!-- endbuild -->
+    </head>
+    <body ng-app="rssFeedApp">
+        <div data-ui-view></div>
+        <!-- build:js js/assets.min.js -->
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="bower_components/x2js/xml2json.min.js"></script>
+        <script src="bower_components/angular-xml/angular-xml.min.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <!-- endbuild -->
 
-<!-- build:js js/app.min.js -->
-<script src="app.js"></script>
-<script src="config.js"></script>
-<script src="routes.js"></script>
-<script src="listNews/ListNewsController.js"></script>
-<script src="viewNews/ViewNewsController.js"></script>
-<script src="filters/imageSplit.js"></script>
-<script src="filters/description.js"></script>
-<script src="filters/fulltext.js"></script>
-<script src="service/timeService.js"></script>
-<script src="service/arrayService.js"></script>
-<script src="service/FeedService.js"></script>
-<!-- endbuild -->
-</body>
+        <!-- build:js js/app.min.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/routes.js"></script>
+        <script src="scripts/controllers/ListNewsController.js"></script>
+        <script src="scripts/controllers/ViewNewsController.js"></script>
+        <script src="scripts/filters/imageSplit.js"></script>
+        <script src="scripts/filters/description.js"></script>
+        <script src="scripts/filters/fulltext.js"></script>
+        <script src="scripts/service/timeService.js"></script>
+        <script src="scripts/service/arrayService.js"></script>
+        <script src="scripts/service/FeedService.js"></script>
+        <!-- endbuild -->
+    </body>
 </html>

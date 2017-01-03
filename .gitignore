@@ -1,10 +1,5 @@
-.htaccess
-npm-debug.log
-project/npm-debug.log
-project/.tmp
 project/node_modules
-project/app/js/config.js
-project/app/bower_components
 project/dist
+project/.tmp
 .idea/
-
+project/bower_components
