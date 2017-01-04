@@ -14,8 +14,8 @@ rssFeedApp
             }).then(function mySucces(response) {
                 var id = $stateParams.id;
                 $scope.feeds = response.data.rss.channel.item[id];
-                $scope.time = TimeParse(response.data.rss.channel.item[id].pubDate.__cdata);
-                $scope.content = $scope.feeds.image.__cdata.split('src="')[1].split('">')[0];
+                $scope.time = TimeParse(response.data.rss.channel.item[id].pubDate);
+                $scope.content = $scope.feeds.enclosure._url;
 
             }, function myError(response) {
                 $scope.feeds = response.statusText;

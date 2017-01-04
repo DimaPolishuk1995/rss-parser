@@ -13,7 +13,7 @@ rssFeedApp
             $scope.feeds = response.data.rss.channel.item;
 
             for (var i = 0, len = $scope.feeds.length; i < len; i++) {
-                $scope.feeds[i].pubDate.__cdata = TimeParse($scope.feeds[i].pubDate.__cdata);
+                $scope.feeds[i].pubDate = TimeParse($scope.feeds[i].pubDate);
             }
         }, function myError(response) {
             $scope.feeds = response.statusText;
@@ -29,7 +29,7 @@ rssFeedApp
                 $scope.feeds = response.data.rss.channel.item;
 
                 for (var i = 0, len = $scope.feeds.length; i < len; i++) {
-                    $scope.feeds[i].pubDate.__cdata = TimeParse($scope.feeds[i].pubDate.__cdata);
+                    $scope.feeds[i].pubDate = TimeParse($scope.feeds[i].pubDate);
                 }
             }, function myError(response) {
                 $scope.feeds = response.statusText;

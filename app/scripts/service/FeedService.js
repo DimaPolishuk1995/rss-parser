@@ -2,7 +2,7 @@
 
 rssFeedApp
     .factory('FeedService', function () {
-        var _url = 'http://k.img.com.ua/rss/ru/news.xml';
+        var _url = 'https://www.rbc.ua/static/rss/all.rus.rss.xml';
 
         return {
             setUrl: function (url) {
