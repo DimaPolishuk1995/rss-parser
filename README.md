@@ -19,10 +19,3 @@ $ cd project
 $ npm i and bower i
 $ gulp serve or gulp build
 ```
-
-### Plugins
-
-* Allow-Control-Allow-Origin: *
-* https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi
-
-Go to http://localhost:8083 to see the application
