@@ -21,7 +21,6 @@
                 <li class="item" ng-repeat="feed in feeds  | filter:buscarTexto">
                     <img src="{{feed.enclosure._url}}">
                     <h5><a ui-sref="view-property({id:{{$index}}})">{{feed.title}}</a></h5>
-                    <p class="text-left">{{feed.description | limitTo:50}} ...</p>
                     <span class="small">{{feed.pubDate | date:'yyyy-MM-dd HH:mm'}}</span>
                     <button ui-sref="view-news({id:{{$index}}})">Читать даллее</button>
                 </li>

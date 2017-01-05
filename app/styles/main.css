@@ -100,7 +100,7 @@ li.item img, .itemView img {
     display: inline-block;
     width: 100%;
     max-width: 500px;
-    height: 200px;
+    height: auto;
     margin-top: 20px;
 }
 
