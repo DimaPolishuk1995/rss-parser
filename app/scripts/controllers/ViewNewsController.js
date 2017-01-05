@@ -7,7 +7,7 @@ rssFeedApp
 
         $scope.feedSrc = FeedService.getUrl();
 
-        var url = 'http://ajax.googleapis.com/ajax/services/feed/load' +
+        var url = 'https://ajax.googleapis.com/ajax/services/feed/load' +
             '?v=1.0&num=100&output=xml&q=' + $scope.feedSrc;
 
         var filter = $sce.trustAsResourceUrl(url);
