@@ -7,11 +7,4 @@ var rssFeedApp = angular.module('rssFeedApp', [
     'xml',
     'ngResource',
     'ngRoute'
-])
-
-    .config(['$httpProvider', function ($httpProvider) {
-        $httpProvider.defaults.useXDomain = true;
-        $httpProvider.interceptors.push('xmlHttpInterceptor');
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
-    }
-    ]);
+]);

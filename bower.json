@@ -6,9 +6,9 @@
     "angular-ui-router": "~0.3.1",
     "angular-xml": "^2.2.1",
     "angular-resource": "^1.4.0",
-    "angular-route": "^1.4.0"
+    "angular-route": "^1.4.0",
+    "abdmob/x2js": "x2js#^1.2.0"
   },
   "appPath": "app",
   "moduleName": "rssParserApp"
 }
-
