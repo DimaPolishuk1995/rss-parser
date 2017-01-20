@@ -6,17 +6,13 @@ rssFeedApp
         $scope.loader = true;
 
         $scope.feedSrc = FeedService.getUrl();
-
-        var url = 'https://ajax.googleapis.com/ajax/services/feed/load' +
-            '?v=1.0&num=100&output=xml&q=' + $scope.feedSrc;
-
-        var filter = $sce.trustAsResourceUrl(url);
+        var filter = $sce.trustAsResourceUrl($scope.feedSrc);
 
         $timeout(function () {
-            $http.jsonp(filter, {callback: 'JSON_CALLBACK'}).then(function mySucces(response) {
+            $http.get(filter).then(function (response) {
                 var id = $stateParams.id;
                 var x2js = new X2JS();
-                var aftCnv = x2js.xml_str2json(response.data.responseData.xmlString);
+                var aftCnv = x2js.xml_str2json(response.data);
 
                 $scope.feeds = aftCnv.rss.channel.item[id];
                 $scope.time = TimeParse(aftCnv.rss.channel.item[id].pubDate);

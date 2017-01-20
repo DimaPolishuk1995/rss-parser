@@ -6,41 +6,32 @@ rssFeedApp
         $scope.feedSrc = FeedService.getUrl();
         $scope.news = ArrayService.getArrayNews();
 
-        var url = 'https://ajax.googleapis.com/ajax/services/feed/load' +
-            '?v=1.0&num=100&output=xml&q=' + $scope.feedSrc;
-        var filter = $sce.trustAsResourceUrl(url);
+        var filter = $sce.trustAsResourceUrl($scope.feedSrc);
 
-        $http.jsonp(filter, {callback: 'JSON_CALLBACK'}).then(function mySucces(response) {
+        $http.get(filter).then(function (response) {
             var x2js = new X2JS();
-            var aftCnv = x2js.xml_str2json(response.data.responseData.xmlString);
+            var aftCnv = x2js.xml_str2json(response.data);
 
             $scope.feeds = aftCnv.rss.channel.item;
 
             for (var i = 0, len = $scope.feeds.length; i < len; i++) {
                 $scope.feeds[i].pubDate = TimeParse($scope.feeds[i].pubDate);
             }
-        }, function myError(response) {
-            $scope.feeds = response.statusText;
         });
 
         $scope.loadFeed = function () {
             FeedService.setUrl($scope.feedSrc);
-            var url = 'https://ajax.googleapis.com/ajax/services/feed/load' +
-                '?v=1.0&num=100&output=xml&q=' + $scope.feedSrc;
-            var filter = $sce.trustAsResourceUrl(url);
+            var filter = $sce.trustAsResourceUrl($scope.feedSrc);
 
-            $http.jsonp(filter, {callback: 'JSON_CALLBACK'}).then(function mySucces(response) {
+            $http.get(filter).then(function (response) {
                 var x2js = new X2JS();
-                var aftCnv = x2js.xml_str2json(response.data.responseData.xmlString);
+                var aftCnv = x2js.xml_str2json(response.data);
 
                 $scope.feeds = aftCnv.rss.channel.item;
 
                 for (var i = 0, len = $scope.feeds.length; i < len; i++) {
                     $scope.feeds[i].pubDate = TimeParse($scope.feeds[i].pubDate);
                 }
-            }, function myError(response) {
-                $scope.feeds = response.statusText;
             });
-
         };
     });

@@ -5,6 +5,7 @@ Requirement
   - node.js
   - gulp
   - bower
+  - install CORS plugin
 
 ### Installation
 
